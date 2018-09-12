@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/detail/index"
+    ],
+    "window": {
+        "navigationStyle": "default",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTitleText": "CNODE",
+        "navigationBarTextStyle": "black"
+    }
+}

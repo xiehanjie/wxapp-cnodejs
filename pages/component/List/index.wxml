@@ -1,0 +1,40 @@
+<scroll-view 
+    class="list-box"
+    scroll-y
+    bindscrolltolower="scroll"
+    bindscroll="top"
+    scroll-top="{{top}}"
+>
+    <view
+        class='list-box-li'
+        wx:for="{{list}}" 
+        wx:key="{{index}}"
+        data-num="{{item.id}}"
+        bindtap="btn"
+    >
+
+        <view class='list-box-li-top'>
+            <image class='list-box-li-img' src="{{item.author.avatar_url}}" /> 
+            <view class='list-box-li-text'>
+                <view class='list-box-li-title'>{{item.title}}</view>
+                <view class='list-box-li-type' >
+                    <text 
+                        style="background: {{item.tab == 'share' ? '#53dc9b' : item.tab == 'ask' ? '#fbf173' : item.good == 'good' ? '#dc5353' : '#49a0f9'}}"
+                    >{{item.tab == 'good' ? '精华' : item.tab == 'share' ? '分享' : item.tab == 'ask' ? '问答' : '招聘' 
+                        }}</text>
+                    <text 
+                        wx:if="{{item.top}}" 
+                        style="background: #dc5353;margin-left: 20rpx"
+                    >置顶</text>
+                </view>
+            </view>
+        </view>
+        <view class='list-box-li-bottom'>
+            <view>{{item.reply_count}}/{{item.visit_count}}</view>
+            <view>{{item.time}}</view>
+        </view>
+    </view>
+</scroll-view>
+<view class='top' style='display:{{TopSwitch}}' bindtap='topbtn'>
+    <image src='../../img/top.png'/>
+</view>

@@ -1,0 +1,11 @@
+<Nav
+    tabs="{{tabs}}"
+    type="{{type}}"
+    bind:btn="tabs"
+/>
+<List
+    list="{{list}}"
+    bind:btn="detail"
+    bind:scroll="scroll"
+    bind:top="top"
+/>

@@ -1,0 +1,12 @@
+<view class="nav-box">
+    <view 
+        wx:for="{{tabs}}"
+        data-tab="{{item.value}}"
+        data-type="{{index}}"
+        wx:key="{{index}}"
+        class="{{type == index ? 'nav-act' : ''}}"
+        bindtap="btn"
+    >
+        {{item.title}}
+    </view>
+</view>

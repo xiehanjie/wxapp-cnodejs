@@ -1,0 +1,37 @@
+
+<view class='detail-box'>
+    <view class='detail-title'>{{data.title}}</view>
+    <view class='detail-user'>
+        <image class='detail-user-img' src='{{data.author.avatar_url}}'/>
+        <view class='detail-user-detail'>
+            <view class='detail-user-name'>{{data.author.loginname}}</view>
+            <view class='detail-user-text'>
+                创建时间：{{data.time}}·浏览数：{{data.visit_count}}
+            </view>
+        </view>
+    </view>
+    <import src="../towxml/entry.wxml"/>
+    <template is="entry" data="{{...md}}"/>
+
+    <view class='detail-reply'>
+        <view 
+            wx:for='{{data.replies}}'
+            wx:key='{{index}}'
+        >
+            <view class='detail-user'>
+                <image class='detail-user-img' src='{{item.author.avatar_url}}'/>
+                <view class='detail-user-detail'>
+                    <view class='detail-user-name'>{{item.author.loginname}}</view>
+                    <view class='detail-user-text'>
+                        回复时间：{{item.create_at}}
+                    </view>
+                </view>
+            </view>
+            <import src="../towxml/entry.wxml"/>
+            <template is="entry" data="{{...item.content}}"/>
+        </view>
+    </view>
+</view>
+<view class='top' style='display:{{TopSwitch}}' bindtap='topbtn'>
+    <image src='../img/top.png'/>
+</view>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "Nav": "../component/Nav/index",
+        "List": "../component/List/index"
+    }
+}
